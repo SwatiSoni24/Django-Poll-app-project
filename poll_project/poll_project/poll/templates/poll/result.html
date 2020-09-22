@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style media="screen">
+    *{
+    font-size:20px;
+    font-family:Calibri;
+    padding:0;
+    margin:0;
+    }
+    .topbar{
+    width:100%;
+    padding:1%;
+    background-color:#F7D358;
+    }
+    .topbar>span{
+    font-size:36px;
+    padding:0 0 0 1%;
+    color:#4d5d53;
+    }
+    .topbar a{
+    font-size:24px;
+    float:right;
+    padding:0 3% 0 3%;
+    color:#4d5d53;
+    }
+    a{
+    text-decoration:none;
+    }
+    .container{
+    background-color:#F7D358;
+    width:50%;
+    margin:auto;
+    }
+    .container *{
+    margin:2%;
+    color:#4d5d53;
+    }
+    .container>h1{
+    font-size:30px;
+    text-align:center;
+    padding:2% 0 2% 0;
+    border-bottom:1px solid white;
+    color:#4d5d53;
+    }
+    </style>
+</head>
+<body>
+<div class="topbar">
+<span>Poll Application</span>
+<span><a href="{% url 'home' %}">Home</a></span>
+<span><a href="{% url 'create' %}">Create</a></span>
+</div>
+<br>
+<br>
+<div class="container">
+<h1>Poll result</h1>
+<h3>{{p.question}}</h3>
+<p>{{p.option_one}}---{{p.option_one_count}}</p>
+<p>{{p.option_two}}---{{p.option_two_count}}</p>
+<p>{{p.option_three}}---{{p.option_three_count}}</p>
+<p>Total Votes= {{p.total}}</p>
+</div>
+</body>
+</html>
